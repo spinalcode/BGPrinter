@@ -54,7 +54,7 @@ void pout (int val) {
 
 int main () {
     gb.begin();
-    pout(gb.sound.playMusicStream("feelgood.SND"));
+    gb.sound.playMusicStream("feelgood.SND");
     int16_t x,y,x_lpupil,x_rpupil,y_pupil, squint=1;
     uint8_t mouth=0,eyes=1,blink=0,blinkcount=0, eyecount=0, grincounter=0, grinout=GRINOUT;
     bool blockmouth=false;
