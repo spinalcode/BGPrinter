@@ -6,7 +6,7 @@ int main () {
     mygame.begin();
     while (mygame.isRunning()) {
         if (mygame.update()) {            
-            mygame.display.print("I feel good!!");
+            mygame.display.print("Hello World!");
             } 
         }    
     

@@ -12,5 +12,5 @@ Drag & drop to move if needed
 
 */
 
-#define PROJ_SCREENMODE 1
+#define PROJ_HIRES 1
 #define PROJ_ENABLE_SOUND 0
