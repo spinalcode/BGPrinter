@@ -1,13 +1,96 @@
-// this might be better...
-// https://github.com/davedarko/GBPrinter
-// https://github.com/davedarko/GBPrinter/blob/master/examples/GBPrinter/GBPrinter.ino
 
 #include "Pokitto.h"
 Pokitto::Core mygame;
 
-uint8_t hadl[640] = {
-0xEF, 0xFF, 0xF7, 0xF7, 0xE7, 0xB7, 0xC3, 0xC3, 0xF1, 0xE1, 0xFA, 0xFA, 0xFC, 0xFC, 0xFC, 0xFC, 0xFE, 0xFF, 0xFD, 0xFD, 0xFC, 0xFC, 0xF8, 0xF8, 0xF1, 0xB0, 0x0B, 0x0B, 0x07, 0x07, 0x07, 0x07, 0xFF, 0xFF, 0xFF, 0xFF, 0xBF, 0xBF, 0x7F, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0x7F, 0x7F, 0x7F, 0x4E, 0x16, 0x25, 0x65, 0x67, 0x66, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x1C, 0x1E, 0xC9, 0xCC, 0x09, 0x89, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xF3, 0xF3, 0xF3, 0xF3, 0x33, 0x73, 0x92, 0x92, 0xF0, 0xF0, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x30, 0x30, 0x6E, 0x6E, 0xF8, 0x74, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFC, 0xFC, 0xFC, 0xFC, 0xE4, 0xE0, 0x48, 0x64, 0x4C, 0x4C, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xC2, 0xC2, 0xB9, 0xB8, 0xE1, 0xD0, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x73, 0x73, 0x67, 0x33, 0x27, 0x37, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x87, 0xCF, 0xB3, 0x12, 0x3E, 0x3E, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x1C, 0x8C, 0x6C, 0x04, 0x64, 0x64, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x99, 0x01, 0x44, 0xCC, 0xCC, 0xCC, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xBF, 0xFF, 0xDF, 0xDF, 0x9F, 0xDF, 0x0F, 0x0F, 0xC7, 0x86, 0xE8, 0xE8, 0xF0, 0xF0, 0xF0, 0xF0, 0xFB, 0xFF, 0xF7, 0xF7, 0xF2, 0xF2, 0xE1, 0xE1, 0xC7, 0xC3, 0x2F, 0x2F, 0x1F, 0x1F, 0x1F, 0x1F, 0xFD, 0xFF, 0xFD, 0xFD, 0xFC, 0xFC, 0xF2, 0xF2, 0xC2, 0xC2, 0xE7, 0xA7, 0xF7, 0xF7, 0xEF, 0xEF, 0xB7, 0xBF, 0x17, 0x17, 0x47, 0x47, 0x09, 0x09, 0x28, 0x28, 0xFC, 0xFC, 0xFD, 0xFD, 0xFE, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0x7F, 0xBF, 0xBF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x66, 0x64, 0x64, 0x64, 0x64, 0x64, 0x66, 0x64, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x49, 0xC9, 0xC9, 0xC9, 0xCD, 0x08, 0x0C, 0x4E, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xF0, 0xF0, 0xF3, 0xF0, 0x93, 0x13, 0x33, 0x73, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x72, 0xE6, 0x66, 0x26, 0x26, 0x60, 0x30, 0x92, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x4C, 0x4C, 0x4C, 0x4C, 0x48, 0x64, 0x64, 0x70, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xC9, 0x99, 0x99, 0x99, 0x99, 0x81, 0xC1, 0x89, 0xFF, 0xFF, 0xFE, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0x27, 0x27, 0x07, 0xAF, 0x89, 0x09, 0x89, 0x89, 0x9F, 0x9F, 0x3F, 0x1F, 0xFF, 0xFF, 0xFF, 0xFF, 0x3E, 0x3E, 0x3E, 0x3E, 0xB3, 0x02, 0x87, 0xCF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x64, 0x64, 0x64, 0x64, 0x4C, 0x24, 0x1C, 0x8C, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xF6, 0xFE, 0xF4, 0xF4, 0xF1, 0xF1, 0xC8, 0xC8, 0x08, 0x08, 0x9F, 0x9F, 0xDF, 0xDF, 0xBF, 0xBF, 0xDF, 0xFF, 0x5F, 0x5F, 0x1F, 0x1F, 0x27, 0x27, 0xA1, 0xA1, 0xF2, 0xF2, 0xF7, 0xF7, 0xFB, 0xFB, 
+#include <stdint.h>
+
+//Total colors 4
+const uint16_t sprite_pal[] = {
+65535,50712,33808,0,
 };
+
+const uint8_t sprite[] =
+{
+160,72,
+192,0,68,107,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,212,0,68,71,
+192,0,17,42,85,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,84,0,17,19,
+192,0,68,106,85,85,170,170,168,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,85,85,170,170,85,89,42,170,84,0,68,71,
+192,0,17,17,0,0,27,255,255,254,17,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,2,255,248,17,0,0,17,19,
+192,0,68,68,0,1,255,169,85,127,228,68,0,0,68,68,0,0,68,68,0,0,68,68,0,0,68,68,0,0,68,68,15,149,111,132,0,0,68,71,
+192,0,17,17,0,31,234,85,85,84,253,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,61,0,2,245,0,0,17,19,
+192,0,68,68,0,254,149,106,169,85,79,196,0,0,68,68,0,0,68,68,0,0,68,68,0,0,68,68,0,0,68,68,245,84,0,46,0,0,68,71,
+192,0,17,17,11,233,86,171,254,149,82,245,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,210,255,128,11,128,0,17,19,
+196,68,0,0,63,170,170,249,2,186,85,125,68,68,0,0,68,68,0,0,68,68,0,0,68,68,0,0,68,68,0,3,223,2,245,65,228,68,0,3,
+209,17,0,0,250,170,171,128,0,14,165,79,81,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,0,3,120,0,45,80,121,17,0,3,
+196,68,0,3,234,170,173,2,2,3,170,83,212,68,0,0,68,68,0,0,68,68,0,0,68,68,0,0,68,68,0,3,176,80,11,85,46,68,0,3,
+209,17,0,15,170,170,172,14,154,128,234,149,245,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,17,0,7,224,64,3,149,79,81,0,3,
+196,68,0,62,170,170,180,26,170,128,234,165,125,68,0,0,68,68,0,0,68,68,0,0,68,68,0,0,68,68,0,3,192,128,2,149,87,196,0,3,
+209,17,0,250,170,170,180,40,34,160,106,169,95,17,0,0,17,17,0,0,17,17,0,0,17,17,0,0,17,1,170,67,193,64,1,213,86,225,0,3,
+196,68,0,251,170,170,164,224,0,160,106,170,87,196,0,0,68,68,0,0,68,68,0,0,68,68,0,0,69,191,255,255,230,165,0,213,100,240,0,3,
+209,17,3,238,170,170,172,16,0,40,170,170,150,209,0,0,17,81,0,0,17,17,0,0,17,17,0,0,15,234,170,171,255,150,1,229,105,121,0,3,
+192,0,79,170,170,170,174,111,254,80,234,170,165,240,68,68,47,244,68,68,0,0,68,68,0,0,68,68,62,90,170,169,91,244,2,165,106,108,68,71,
+192,0,31,190,170,170,255,255,171,255,234,170,169,172,17,17,180,45,17,17,0,0,17,17,0,0,17,17,186,170,191,255,213,111,67,169,106,159,17,19,
+192,0,110,250,170,175,250,170,169,70,254,170,170,173,68,68,208,15,68,68,0,0,68,68,0,0,68,68,121,170,170,255,254,87,235,170,170,155,4,71,
+192,0,62,250,170,254,170,170,170,80,31,234,170,175,17,19,192,7,17,17,0,0,17,17,0,0,17,17,61,170,171,255,255,224,190,170,170,167,145,19,
+192,0,187,234,175,234,255,170,165,91,225,250,170,171,68,71,64,3,68,111,0,0,68,68,0,0,68,68,15,106,170,255,255,253,11,234,170,166,196,71,
+192,0,251,234,191,171,255,255,255,255,253,127,170,171,209,31,0,15,17,246,224,0,17,17,0,0,17,17,3,234,170,255,255,255,209,250,170,169,209,19,
+192,0,251,250,250,175,255,192,0,63,255,171,234,170,196,78,0,15,71,128,48,0,68,68,0,0,68,68,0,254,170,255,229,111,253,126,170,169,148,71,
+192,1,239,235,234,190,0,224,0,240,31,170,250,170,225,28,0,12,45,0,56,0,17,17,0,0,17,17,0,47,170,224,32,7,255,79,170,170,177,19,
+196,69,239,239,171,232,84,48,0,128,3,234,250,170,224,60,0,12,244,0,40,68,0,0,68,68,0,0,68,71,254,208,0,9,31,135,234,170,112,3,
+209,17,239,255,175,19,235,0,0,47,129,250,190,170,240,52,0,47,192,0,57,17,0,0,17,17,0,0,17,17,63,199,128,0,2,230,234,170,175,3,
+196,69,235,190,248,13,0,192,0,224,116,222,174,170,240,48,0,63,0,0,52,68,0,0,68,68,0,0,68,68,3,232,160,7,252,253,186,170,175,211,
+209,17,251,255,208,12,2,32,2,64,12,7,175,170,224,240,0,56,0,0,241,17,0,0,17,17,0,0,17,17,3,161,48,13,3,95,254,170,173,243,
+196,68,126,238,0,48,42,176,3,171,9,1,251,170,225,255,248,16,0,3,196,68,0,0,68,68,0,0,68,68,3,85,116,56,43,65,255,170,170,127,
+209,17,255,238,0,48,43,240,3,90,131,0,127,235,207,213,191,128,0,15,17,17,0,0,17,17,0,0,17,17,3,70,244,48,154,64,3,170,171,111,
+196,79,255,171,0,48,95,240,10,253,131,0,14,235,124,0,1,240,0,62,68,68,0,0,68,68,0,0,68,68,7,135,176,97,127,64,3,218,171,175,
+209,61,3,235,208,48,156,240,11,255,131,0,46,239,176,0,0,59,253,240,17,17,0,0,17,17,0,0,17,23,255,214,48,144,187,64,11,230,171,175,
+192,184,2,234,240,44,92,240,11,227,131,0,186,254,252,0,0,46,11,196,0,0,68,68,0,0,68,68,0,62,85,255,176,129,227,64,14,182,171,111,
+192,240,16,234,180,12,47,255,255,254,131,3,234,192,15,0,0,44,0,241,0,0,17,17,0,0,17,17,0,240,0,31,208,145,251,0,45,122,170,111,
+192,224,28,234,244,12,47,233,107,253,138,11,170,192,3,128,0,52,0,60,0,0,68,68,0,0,68,68,1,208,0,2,208,161,255,0,181,111,254,187,
+192,192,7,186,224,6,125,0,0,126,12,15,170,192,2,192,154,240,40,13,0,0,17,17,0,0,17,17,2,192,0,0,144,49,125,3,229,253,190,243,
+192,192,11,254,210,131,224,0,0,7,48,131,234,141,1,192,62,67,228,15,0,0,68,68,0,0,68,68,2,192,0,0,0,30,184,63,87,208,15,215,
+192,224,5,255,219,195,192,0,0,3,192,242,235,48,1,192,45,30,0,15,0,0,17,17,0,0,17,17,2,192,0,0,0,6,144,181,91,64,7,83,
+192,240,1,240,31,243,128,0,0,1,194,253,255,244,2,192,31,112,0,15,0,0,68,68,0,0,68,68,2,192,0,0,0,0,0,181,124,4,3,7,
+192,112,1,240,31,255,84,0,0,0,203,252,126,192,3,192,26,240,0,15,0,0,17,17,0,0,17,17,0,224,0,0,0,0,0,122,240,126,3,19,
+196,60,0,240,27,255,84,0,0,0,255,252,11,80,11,64,20,208,0,15,68,68,0,0,68,68,0,0,68,56,0,0,4,0,80,31,128,208,3,3,
+209,44,0,224,23,255,133,0,0,1,255,248,11,64,15,0,0,208,0,12,17,17,0,0,17,17,0,0,17,31,80,0,127,7,248,0,2,244,7,3,
+196,79,0,208,6,255,209,84,0,2,255,224,11,0,45,0,0,180,8,60,68,68,0,0,68,68,0,0,68,75,255,255,255,255,252,0,2,128,14,3,
+209,19,192,224,5,255,248,21,84,11,255,192,11,0,184,0,0,63,240,52,17,17,0,0,17,17,0,0,17,31,255,255,255,255,252,0,3,64,45,3,
+196,69,248,241,1,127,255,128,0,191,255,128,11,11,208,0,0,5,64,240,68,68,0,0,68,68,0,0,68,111,255,255,255,255,252,0,1,128,60,3,
+209,17,63,241,0,85,255,255,255,255,254,0,11,255,224,0,0,0,3,192,17,17,0,0,17,17,16,0,17,47,255,255,255,255,252,0,0,0,240,3,
+196,68,0,48,64,5,127,255,255,255,0,0,15,250,180,1,0,0,47,0,68,68,0,0,68,70,252,0,68,95,255,242,255,255,244,0,0,7,192,3,
+209,17,0,60,64,1,127,254,191,254,64,0,46,170,189,0,208,3,252,0,17,17,0,0,17,23,7,0,17,31,255,208,127,255,208,1,224,190,0,3,
+192,0,68,92,16,0,111,249,111,245,0,0,62,170,175,64,255,255,196,68,0,0,68,68,0,9,3,4,0,2,255,0,3,249,0,3,255,244,68,71,
+192,0,17,31,20,0,28,10,168,116,0,0,250,170,175,245,192,0,17,17,0,0,17,17,185,9,2,209,0,0,19,64,31,244,0,7,172,0,17,19,
+192,0,68,67,193,0,15,160,6,240,0,2,234,170,190,255,128,0,68,68,0,0,68,70,203,138,0,196,0,0,71,143,255,224,0,15,172,0,68,71,
+192,0,17,27,244,64,14,255,254,208,0,11,170,170,251,209,0,0,17,17,0,0,17,23,0,243,0,225,0,0,16,195,234,208,0,30,175,0,17,19,
+192,0,68,191,190,0,11,255,255,192,0,46,170,171,239,68,0,0,68,68,0,0,68,79,240,43,0,116,0,0,68,210,234,192,0,62,171,224,68,71,
+192,0,19,250,191,224,3,170,171,128,1,250,170,175,188,17,0,0,17,17,0,0,17,56,28,15,64,49,0,0,17,112,235,128,0,126,170,240,17,19,
+192,0,111,170,255,254,0,234,175,0,47,234,170,190,244,68,0,0,68,68,0,0,68,121,3,7,192,52,26,144,68,52,126,0,0,186,254,240,68,71,
+192,0,250,171,255,255,128,63,252,1,254,234,170,235,209,17,0,0,17,17,0,0,17,63,193,141,0,37,120,56,17,44,0,0,4,254,255,128,17,19,
+196,71,234,175,255,254,225,0,0,7,255,250,171,175,0,0,68,68,0,0,68,68,0,112,176,240,0,29,192,12,0,15,0,0,4,223,244,68,0,3,
+209,31,170,175,255,254,253,0,0,63,255,254,170,189,0,0,17,17,0,0,17,17,0,112,44,128,0,126,0,29,0,7,192,0,17,192,17,17,0,3,
+196,126,170,191,255,254,175,212,6,255,255,238,170,244,0,0,68,68,0,0,68,68,0,48,11,0,0,192,0,48,0,1,252,0,19,192,68,68,0,3,
+209,250,171,191,255,250,171,255,255,239,255,254,171,209,0,0,17,17,0,0,17,17,0,40,1,0,0,0,0,209,0,0,44,0,83,64,17,17,0,3,
+199,234,175,254,239,250,170,170,170,191,255,255,170,196,0,0,68,68,0,0,68,68,0,12,0,0,0,0,2,132,0,0,108,0,91,192,68,68,0,3,
+219,170,174,239,255,255,255,255,255,251,255,251,170,193,0,0,17,17,0,0,17,17,0,3,0,0,0,0,3,17,0,2,255,255,255,248,17,17,0,3,
+206,170,190,248,15,255,255,255,255,251,239,255,170,212,0,0,68,68,0,0,68,68,0,0,208,0,0,0,6,68,0,47,245,170,255,254,68,68,0,3,
+238,170,191,244,3,255,255,239,255,250,255,255,235,241,0,0,17,17,0,0,17,17,0,0,32,0,0,0,13,17,0,255,213,91,255,251,209,17,0,3,
+238,170,191,204,3,191,255,255,255,251,0,255,235,240,68,68,0,0,68,68,0,0,68,68,12,0,0,0,28,0,75,255,85,111,255,230,224,0,68,71,
+238,170,191,204,3,191,255,255,255,250,128,59,255,240,17,17,0,0,17,17,0,0,17,17,14,0,0,0,60,0,63,253,85,191,255,233,176,0,17,19,
+222,190,191,234,3,191,255,255,255,252,192,59,255,240,68,68,0,0,68,68,0,0,68,68,3,64,0,0,141,0,255,245,86,255,255,154,108,0,68,71,
+207,191,255,178,131,191,255,255,255,252,192,59,255,176,17,17,0,0,17,17,0,0,17,17,1,208,0,0,13,11,255,229,91,255,255,90,158,0,17,19,
+199,175,255,172,62,191,255,255,255,250,48,59,255,184,68,68,0,0,68,68,0,0,68,68,0,56,0,0,56,47,255,213,95,255,253,90,155,0,68,71,
+193,235,255,235,234,255,255,255,255,251,64,251,255,188,17,17,0,0,17,17,0,0,17,17,0,11,144,1,253,255,255,85,111,255,253,86,167,192,17,19,
+192,190,255,250,170,255,255,255,255,254,255,239,255,188,68,68,0,0,68,68,0,0,68,68,0,0,192,31,159,255,255,85,127,255,249,85,166,208,68,71,
+255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
+};
+
+
+
+
+
+int px,py=0;
 
 char respond[] = {0, 0};       //The 2 byte response we always get
 
@@ -17,6 +100,7 @@ DigitalInOut datOut(P0_13);
 
 unsigned short checksum = 0;
 int whichChar = 0;
+bool isPrinter=0;
 
 void sendByte(unsigned char byteToSend) {
 
@@ -56,13 +140,109 @@ void getResponse() {
         }
         wait_us(200);
     }
+        wait_us(500);
 }
 
 void sendChecksum() {
     unsigned short lineChecksum = checksum; //Grab the state of checksum so we don't change it while sending
     sendByte(lineChecksum & 0xFF);          //Send checksum low byte
     sendByte(lineChecksum >> 8);            //Send checksum high byte
+}
+
+void sendHeader(){
+    sendByte(0x88);    // magic
+    sendByte(0x33);    // magic
+    checksum = 0;       // reset checksum
+}    
+
+void initPrinter(){
+    sendHeader();
+    sendByte(0x01);    // 1 = init printer
+    sendByte(0x00);    // compression, 0 = none, 1 = RLE
+    sendByte(0x00);    // data length
+    sendByte(0x00);    // data length 2nd byte
+    sendChecksum();
     getResponse();
+}
+
+void printLine(){
+    sendHeader();
+    sendByte(0x04);    // 4 = Send some print data
+    sendByte(0x00);    // compression, 0 = none, 1 = RLE
+    // send 0x280 which is 640, the maximum data allowed at a time
+    sendByte(0x80);    // data length
+    sendByte(0x02);    // data length 2nd byte
+    /*
+    for(int t=0; t<640; t++){
+        //sendByte(hadl[t]);    // test data
+        sendByte(sprite[t+2]);    // test data
+    }
+    */
+
+    int x1,y1,p1,p2,p3,p4,p5,p6,p7,p8,fullPixel;
+    for(int line=0; line<2; line++){
+        for(int block=0; block<20; block++){
+            for(int row=0; row<8; row++){
+                fullPixel = 0;
+                x1 = px+(block*8);
+                y1 = py+(line*8)+row;
+                p1 = (mygame.display.getPixel(x1, y1)&2)>>1;
+                p2 = (mygame.display.getPixel(x1+1, y1)&2)>>1;
+                p3 = (mygame.display.getPixel(x1+2, y1)&2)>>1;
+                p4 = (mygame.display.getPixel(x1+3, y1)&2)>>1;
+                p5 = (mygame.display.getPixel(x1+4, y1)&2)>>1;
+                p6 = (mygame.display.getPixel(x1+5, y1)&2)>>1;
+                p7 = (mygame.display.getPixel(x1+6, y1)&2)>>1;
+                p8 = (mygame.display.getPixel(x1+7, y1)&2)>>1;
+                // getPixel is currently broken, so were-combine the pixels in a different order.
+                fullPixel = (p4<<7)+(p3<<6)+(p2<<5)+(p1<<4)+(p8<<3)+(p7<<2)+(p6<<1)+p5;
+                sendByte(fullPixel);
+
+                p1 = mygame.display.getPixel(x1, y1)&1;
+                p2 = mygame.display.getPixel(x1+1, y1)&1;
+                p3 = mygame.display.getPixel(x1+2, y1)&1;
+                p4 = mygame.display.getPixel(x1+3, y1)&1;
+                p5 = mygame.display.getPixel(x1+4, y1)&1;
+                p6 = mygame.display.getPixel(x1+5, y1)&1;
+                p7 = mygame.display.getPixel(x1+6, y1)&1;
+                p8 = mygame.display.getPixel(x1+7, y1)&1;
+                fullPixel = (p4<<7)+(p3<<6)+(p2<<5)+(p1<<4)+(p8<<3)+(p7<<2)+(p6<<1)+p5;
+
+                sendByte(fullPixel);
+            }
+        }
+    }
+
+    sendChecksum();
+    getResponse();
+    // end data statement
+    sendHeader();
+    sendByte(0x04);    // 
+    sendByte(0x00);    // 
+    sendByte(0x00);    // 
+    sendByte(0x00);    // 
+    sendChecksum();
+    getResponse();
+
+    sendByte(0x88); // Magic bytes
+    sendByte(0x33);
+    checksum = 0;
+    sendByte(0x02); // Commande 2 (Print)
+    sendByte(0x00);
+    sendByte(0x04); // 4 bytes to send
+    sendByte(0x00);
+    sendByte(0x01); // 1 = print, 0 = line feed
+    if(py/16==8){
+        sendByte(0x03); // Marges (nibbles avant 1, après 3)
+    }else{
+        sendByte(0x00); // Marges (nibbles avant 1, après 3)
+    }        
+    sendByte(0xE4); // Palette (11100100: Noir, Foncé, Clair, Blanc)
+    sendByte(0x40); // Expo (7 bits)
+
+    sendChecksum();
+    getResponse();
+
 }
 
 
@@ -83,137 +263,54 @@ int main () {
     //printShape(1); // test!
 
     mygame.display.persistence = 1;
-    mygame.display.clear();
-    mygame.display.print("Printer Test\n");
+//    mygame.display.clear();
+//    mygame.display.print("Printer Test\n");
+
+    mygame.display.drawBitmap(0,0,sprite);
+    mygame.display.load565Palette(sprite_pal);
+
 
     while (mygame.isRunning()) {
-        if (mygame.update()) {            
+        if (mygame.update()) {
+            
+            if (mygame.buttons.bBtn()){
+                mygame.display.drawBitmap(0,0,sprite);
+                py=0;
+            }            
+                        
             if (mygame.buttons.aBtn()){
-                mygame.display.print("Sending init code\n");
-                mygame.display.update();
-
-                sendByte(0x88);    // magic
-                sendByte(0x33);    // magic
-                checksum = 0;
-                sendByte(0x01);    // 1 = init printer
-                sendByte(0x00);    // compression, 0 = none, 1 = RLE
-                sendByte(0x00);    // data length
-                sendByte(0x00);    // data length 2nd byte
-                int temp = checksum;
-                sendByte(temp & 0xFF);    // checksum 2nd byte
-                sendByte(temp >> 8);    // checksum
-                getResponse();
-
-                mygame.display.print("Done\n");
-                
-                char tempText[20];
-                sprintf(tempText,"Response = %#04x, %#04x\n", respond[0], respond[1]);
-                mygame.display.print(tempText);
-                
+                initPrinter();
+                py=0;
                 if(respond[0]==0x81 && respond[1]==0x00){
-                    mygame.display.print("OK, Proceed\n");
-                    mygame.display.update();
-
-                    // send test data
-                    sendByte(0x88);    // magic
-                    sendByte(0x33);    // magic
-                    checksum = 0;
-                    sendByte(0x04);    // 4 = Send some print data
-                    sendByte(0x00);    // compression, 0 = none, 1 = RLE
-                    // send 0x280 which is 640, the maximum data allowed at a time
-                    sendByte(0x80);    // data length
-                    sendByte(0x02);    // data length 2nd byte
-                    for(int t=0; t<640; t++){
-                        sendByte(hadl[t]);    // test data
-                    }
-                    temp = checksum;
-                    sendByte(temp & 0xFF);    // checksum 2nd byte
-                    sendByte(temp >> 8);    // checksum
-                    getResponse();
-
-                    sprintf(tempText,"Response = %#04x, %#04x\n", respond[0], respond[1]);
-                    mygame.display.print(tempText);
-                    mygame.display.update();
-
-                    // end data statement
-                    sendByte(0x88);    // magic
-                    sendByte(0x33);    // magic
-                    checksum = 0;
-                    sendByte(0x04);    // 
-                    sendByte(0x00);    // 
-                    sendByte(0x00);    // 
-                    sendByte(0x00);    // 
-                    temp = checksum;
-                    sendByte(temp & 0xFF);    // checksum 2nd byte
-                    sendByte(temp >> 8);    // checksum
-                    getResponse();
-                    
-                    sprintf(tempText,"Response = %#04x, %#04x\n", respond[0], respond[1]);
-                    mygame.display.print(tempText);
-                    mygame.display.update();
-
-                    sendByte(0x88); // Magic bytes
-                    sendByte(0x33);
-                    checksum = 0;
-                    sendByte(0x02); // Commande 2 (Print)
-                    sendByte(0x00);
-                    sendByte(0x04); // 4 bytes to send
-                    sendByte(0x00);
-                    sendByte(0x01); // 1 = print, 0 = line feed
-                    sendByte(0x13); // Marges (nibbles avant 1, après 3)
-                    sendByte(0xE4); // Palette (11100100: Noir, Foncé, Clair, Blanc)
-                    sendByte(0x40); // Expo (7 bits)
-
-                    temp = checksum;
-                    sendByte(temp & 0xFF);    // checksum 2nd byte
-                    sendByte(temp >> 8);    // checksum
-                    getResponse();
-                    
-                    sprintf(tempText,"Response = %#04x, %#04x\n", respond[0], respond[1]);
-                    mygame.display.print(tempText);
-                    mygame.display.update();
-
-                bool waiting=1;
-                while(waiting){
-                    sendByte(0x88);    // magic
-                    sendByte(0x33);    // magic
-                    checksum = 0;
-                    sendByte(0x0F);    // 
-                    sendByte(0x00);    // 
-                    sendByte(0x00);    // 
-                    sendByte(0x00);    // 
-                    temp = checksum;
-                    sendByte(temp & 0xFF);    // checksum 2nd byte
-                    sendByte(temp >> 8);    // checksum
-                    getResponse();
-                    
-                    sprintf(tempText,"Response = %#04x, %#04x\n", respond[0], respond[1]);
-                    mygame.display.print(tempText);
-                    mygame.display.update();
-                    if(respond[1] & 2)waiting=0;
+                    isPrinter=1;
                 }
-
-                waiting=1;
-                while(waiting){
-                    sendByte(0x88);    // magic
-                    sendByte(0x33);    // magic
-                    checksum = 0;
-                    sendByte(0x0F);    // 
-                    sendByte(0x00);    // 
-                    sendByte(0x00);    // 
-                    sendByte(0x00);    // 
-                    temp = checksum;
-                    sendByte(temp & 0xFF);    // checksum 2nd byte
-                    sendByte(temp >> 8);    // checksum
-                    getResponse();
+    
+                
+                if(isPrinter){
+                    int t=0;
+                    while(t<9){
+                        
+                        wait_ms(300);
+                        sendByte(0x88);    // magic
+                        sendByte(0x33);    // magic
+                        checksum = 0;
+                        sendByte(0x0F);    // 
+                        sendByte(0x00);    // 
+                        sendByte(0x00);    // 
+                        sendByte(0x00);    // 
+                        sendChecksum();
+                        getResponse();
+                            
+                        if(!(respond[1]&0x0B)){
+                            printLine();
+                            py+=16;
+                            t++;
+                        }
+                    } // t
                     
-                    sprintf(tempText,"Response = %#04x, %#04x\n", respond[0], respond[1]);
-                    mygame.display.print(tempText);
-                    mygame.display.update();
-                    if(!(respond[1] & 2))waiting=0;
-                }
-
-
+                    
+                    
+                    
                 }else{
                     // show error log here
                     if(respond[0] != 0x81){
@@ -222,9 +319,8 @@ int main () {
                         mygame.display.print("Printer Error\n");
                     }
                 }
-                mygame.display.update();
                 
-                wait(1);
+//                wait(1);
             }
         } 
     }    
