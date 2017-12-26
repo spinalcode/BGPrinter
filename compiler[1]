@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <title>Login or Signup | Mbed</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="user-scalable=yes,width=device-width,initial-scale=0.9" />
+
+    
+
+    <!-- Included CSS Files -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/futura.css" />
+    <link type="text/css" href="/static/css/app.css" rel="stylesheet"/>
+    <link type="text/css" href="/static/css/mbed.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/responsive-tables.css">
+    <link rel="stylesheet" href="/static/webfonts/ss-standard.css"  />
+    <link rel="stylesheet" href="/static/css/general_foundicons.css">
+    <link rel="stylesheet" href="/static/css/social_foundicons.css">
+    <link rel="stylesheet" href="/static/css/import-button.css">
+    <link rel="stylesheet" href="/static/css/global_nav_bar.css">
+    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600italic,600,700italic,700,800italic,800">
+
+    
+    <script src="/static/js/foundation/modernizr.foundation.js"></script>
+    <script src="/static/js/foundation/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/date.js"></script>
+    <script type="text/javascript" src="/static/js/mbedcom.js"></script>
+    <script type="text/javascript" src="/static/js/import-button.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.timeago.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cycle.all.latest.js"></script>
+    <script type="text/javascript" src="/static/js/json2.js"></script>
+    <script src="/static/js/foundation/jquery.event.move.js"></script>
+    <script src="/static/js/foundation/jquery.event.swipe.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.alerts.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.buttons.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.forms.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.navigation.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.tabs.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.reveal.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.topbar.js"></script>
+    <script src="/static/js/foundation/jquery.foundation.accordion.js"></script>
+    <script src="/static/js/foundation/jquery.placeholder.js"></script>
+    <script src="/static/js/foundation/responsive-tables.js"></script>
+    <script src="/static/js/jquery.smooth-scroll.min.js"></script>
+    <script src="/static/webfonts/ss-standard.js"></script>
+    <script src="/static/webfonts/ss-social.js"></script>
+    <script src="/static/js/foundation/app.js"></script>
+    <script src="/static/js/clipboard.min.js"></script>
+    
+    <script type="text/javascript">
+        var MTIProjectId='531df303-da6d-4e1e-934d-ec3ecdc164a9';
+        (function() {
+            var mtiTracking = document.createElement('script');
+            mtiTracking.type='text/javascript';
+            mtiTracking.async='true';
+            mtiTracking.src="/static/js/mtiFontTrackingCode.js";
+            (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+        })();
+    </script>
+    
+    
+    
+</head>
+
+<body>
+    <div class="global-nav-bar">
+    <div class="global-nav-bar-logo">
+        <a href="https://www.mbed.com">
+            <img src="/static/img/ArmMbedLogo.svg"/>
+        </a>
+    </div>
+    <div class="global-nav-bar-menu">
+        <ul>
+            <li class="developer active">
+                <a href="https://os.mbed.com">
+                    <span class="hide-small">Mbed </span>OS
+                </a>
+            </li>
+            <li class="cloud ">
+                <a href="https://cloud.mbed.com"><span class="hide-small">Mbed </span>Cloud</a>
+            </li>
+            <li class="partner ">
+                <a href="https://partners.mbed.com">Partner<span class="show-small">s</span><span class="hide-small"> Portal</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="global-nav-bar-search">
+        <form action="https://os.mbed.com/search/" method="GET">
+            <input type="search" name="q" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+    <div class="nav-wrapper hide-on-print">
+        <div class="row">
+            <div class="twelve columns navigation" id="nav">
+            
+
+                <ul class="nav-bar menu-list">
+
+                    <li><a href="/">OS Home</a></li>
+                    <li class="hasdropdown not-click">
+                        <a href="#">
+                            Hardware
+                        </a>
+                        <ul class="dropdown no-bullet">
+                            <li><a href="/platforms">Boards</a></li>
+                            <li><a href="/components/">Components</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/code/">Code</a></li>
+                    <li class="hasdropdown not-click">
+                        <a href="#">
+                            Documentation
+                        </a>
+                        <ul class="dropdown no-bullet">
+                            <li><a href="/docs/">Documentation</a></li>
+                            <li><a href="/cookbook/">Cookbook</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/questions/">Questions</a></li>
+                    <li><a href="/forum/">Forum</a></li>
+                    <li class="navSpacer">|</li>
+                    <li class="user-links nav-action-button"><a href="/compiler/" target="_blank">Compiler</a></li>
+
+                </ul>
+
+                <ul class="nav-bar menu-list right">
+
+                    
+                    <li class="user-menu"><a href="/account/login/?next=/accounts/login/">Log In/Signup</a></li>
+                     
+
+                </ul>
+            
+            </div>
+        </div>
+    </div>
+
+    
+    <div>
+        <div class="row" id="top">
+            <div class="six columns">
+                <div class="breadcrumbs">
+                    Login or Signup
+                </div>
+            </div>
+            <div class="six columns header search-block">
+                
+                
+            </div>
+        </div><!-- end of #top -->
+
+        
+    </div>
+    
+
+    
+<div class="row">
+    <div class="nine columns main-content" id="mbed-content">
+        
+
+        
+
+
+<div class="row">
+	<div class="six columns">
+        <form name="login" action="/account/login/" method="POST"> 
+            
+            <fieldset class="formfieldset"> 
+            
+
+                <legend>Login</legend> 
+
+                <input type='hidden' name='csrfmiddlewaretoken' value='OJOAQxrVBqXLQTSe8xFLqjqGTJwFgAlw' />
+                <label for="id_email">Username:</label> 
+                <input id="id_email" name="email" type="text" />
+                <p><small><a tabindex="99" href="/account/forgotten_username/">I've forgotten my username</a></small> 
+                </p> 
+                <label for="id_password">Password:</label>
+                <input id="id_password" maxlength="100" name="password" type="password" />
+                <p> <small><a tabindex="100" href="/account/reset_password/">I've forgotten my password</a></small> 
+                </p>
+                <p> 
+                <input id="id_keep_cookie" name="keep_cookie" type="checkbox" />
+                <label for="id_keep_cookie">Remember me</label> 
+                </p> 
+
+                
+
+                <p>
+                <script type="text/javascript">
+                document.write('<input type="hidden" name="next" value="/compiler/' + document.location.hash +'"/>');
+                </script>
+
+
+                <input  type="submit" id="id_login" value="Login" class="button  radius" />  
+                </p> 
+
+            </fieldset> 
+        </form>
+	</div>
+	   
+    <div class="six columns">
+        <fieldset class="formfieldset"> 
+            <legend>Signup</legend> 
+            <p style="text-align:center;"> 
+            
+
+
+
+
+
+
+
+            
+            <img src="/media/img/arm-mbed-vertical.png" width="200" height="200">
+            
+
+            </p> 
+            <p>
+            <form id="login-page-sign-up-form" action="/account/signup/" method="GET">
+                
+                <script type="text/javascript">
+                document.write('<input type="hidden" name="next" value="/compiler/' + document.location.hash +'"/>');
+                </script>
+                
+                <input type="submit" id="id_signup" value="Signup" class="button  radius" />   
+            </form>
+            </p> 
+        </fieldset> 
+    </div>
+</div>
+
+    </div>
+
+    <div class="three columns sidebar ">
+        
+    </div>
+</div>
+
+
+    <div class="row footer hide-on-print">
+        <div class="twelve columns">
+            <hr />
+            <ul>
+                <li>&copy; Mbed</li>
+                <li><a href="/blog">blog</a></li>
+                <li><a href="/handbook/Jobs">we're hiring!</a></li>
+                <li><a href="/support/">support</a></li>
+                <li><a href="/handbook/Service-status">service status</a></li>
+                <li><a href="/privacy">privacy policy</a></li>
+                <li><a href="/terms">terms and conditions</a> </li>
+            </ul>
+       </div>
+	</div>
+
+
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1447836-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1447836-8', {
+    
+  });
+</script>
+
+
+
+
+
+<div id="cookiemodule">
+    <div class="modouter">
+        <div class="modinner">
+            <h5>Important information</h5>
+            <div class="modcontent">
+                <div class="intro">
+                    <p>This site uses cookies to store information on your computer. By continuing to use our site, you consent to our
+                    <a href="/privacy/">cookies</a>.</p>
+                </div>
+                <div class="modopen">
+                    <p><p style="margin: 0cm 0cm 0pt">Arm websites use two types of cookie: (<strong>1)</strong> those that enable the site to function and perform as required; and <b>(2)</b> analytical cookies which anonymously track visitors only while using the site. If you are not happy with this use of these cookies please review our <a  target="_self" href="/privacy/">Privacy Policy</a> to learn how they can be disabled. By disabling cookies some features of the site will not work.</p></p>
+                </div>
+                <button class="readmore">Read More</button>
+                <button class="accept" id="">accept and hide this message</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    // cookie functions
+    // based on http://www.quirksmode.org/js/cookies.html
+    function create(name, value, days, path, domain) {
+        path = typeof path !== 'undefined' ? path : '/';
+        domain = typeof domain !== 'undefined' ? '; domain=' + domain : '';
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else {
+            var expires = "";
+        }
+        document.cookie = name + "=" + value + expires + domain + "; path=" + path;
+    }
+    function read(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function erase(name) {
+        create(name, "", -1);
+    }
+
+    function getDomain(){
+        var hostname = window.location.hostname;
+        return "."+hostname.substring(hostname.indexOf(".")+1);
+    }
+
+    create('testCookies', 'yes', 365, '/', getDomain());
+    if (read("testCookies") == 'yes' && read("acceptCookies") != 'yes') {
+        jQuery('#cookiemodule').css('display', 'block');
+        jQuery('button.readmore').click(function() {
+            jQuery('.modopen').slideToggle('slow');
+            if (jQuery(this).text() == "Read More") {
+                jQuery(this).text("Read Less");
+            } else {
+                jQuery(this).text("Read More");
+            };
+        });
+
+        jQuery('button.accept').click(function() {
+            create('acceptCookies', 'yes', 365, '/', getDomain());
+            jQuery('#cookiemodule').fadeOut('slow');
+        });
+
+        jQuery('button.close').click(function() {
+            jQuery('#cookiemodule').fadeOut('slow');
+        });
+    }
+});
+</script>
+
+
+<div id="flag-content" class="reveal-modal small">
+    <h2>Report Content</h2>
+    <a class="close-reveal-modal">&#215;</a>
+    <form action="" method="post" id="flag-content-form">
+        <input type='hidden' name='csrfmiddlewaretoken' value='OJOAQxrVBqXLQTSe8xFLqjqGTJwFgAlw' />
+        <ul>
+            <li>
+                <label for="id_reason_1">
+                    <input id="id_reason_1" name="reason" type="radio" value="1" />
+                    Spam
+                </label>
+            </li>
+            <li>
+                <label for="id_reason_2">
+                    <input id="id_reason_2" name="reason" type="radio" value="2" />
+                    Inappropriate
+                </label>
+            </li>
+        </ul>
+        <a class="button secondary cancel-flag">Cancel</a>
+        <input type="submit" value="Report" class="button" />
+    </form>
+</div>
+
+<div id="access-warning-modal" class="reveal-modal">
+    <h2>Access Warning</h2>
+    <p>You do not have the correct permissions to perform this operation. Please, contact us at support@mbed.com to gain full access.</p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+
+</body>
+</html>
